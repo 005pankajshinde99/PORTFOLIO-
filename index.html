@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pankaj Shinde - Portfolio</title>
+  <style>
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: #121212;
+      color: #eee;
+      line-height: 1.6;
+    }
+    a {
+      color: #ffc107;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    header {
+      background: #0d6efd;
+      padding: 15px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 5px 15px rgba(13,110,253,0.6);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .profile-photo {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 3px solid #ffc107;
+      box-shadow: 0 0 15px #ffc107;
+      object-fit: cover;
+    }
+    header h1 {
+      color: white;
+      font-weight: 800;
+      font-size: 2.2rem;
+      margin: 0;
+    }
+    .header-right-icons {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+      color: #ffc107;
+      font-size: 1.1rem;
+      font-weight: 700;
+      user-select: none;
+    }
+    .header-right-icons i {
+      font-size: 1.8rem;
+      margin-top: 6px;
+      cursor: default;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+    nav a {
+      color: white;
+      font-weight: 600;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+    nav a i {
+      font-size: 1.3rem;
+    }
+    nav a:hover {
+      color: #ffd966;
+    }
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px 35px;
+      background: #1e1e1e;
+      border-radius: 12px;
+      box-shadow: 0 12px 24px rgba(255, 193, 7, 0.25);
+      position: relative;
+    }
+    h2 {
+      color: #ffc107;
+      margin-bottom: 25px;
+      font-size: 2.2rem;
+      font-weight: 700;
+      border-bottom: 3px solid #0d6efd;
+      padding-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    h2 i.section-icon {
+      font-size: 1.8rem;
+      color: white;
+      background-color: #0d6efd;
+      padding: 5px 9px;
+      border-radius: 12px;
+      box-shadow: 0 0 8px #0d6efd;
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+    .projects {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .project-card {
+      background: #272727;
+      flex: 1 1 calc(45% - 20px);
+      padding: 20px 18px;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(255, 193, 7, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 30px rgba(255, 193, 7, 0.7);
+    }
+    .project-card h3 {
+      color: #ffc107;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .project-card h3 i.project-icon {
+      font-size: 1.4rem;
+      color: #0d6efd;
+      padding: 3px 7px;
+      background: white;
+      border-radius: 8px;
+    }
+    .project-card p {
+      font-size: 1rem;
+    }
+    .project-card a {
+      margin-top: 10px;
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #ffc107;
+      color: #1a1a1a;
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    .project-card a:hover {
+      background-color: #e0a800;
+    }
+    #dashboard-section {
+      max-width: 480px;
+      margin: 50px auto;
+      padding: 25px;
+      background: #272727;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(255, 193, 7, 0.5);
+      text-align: center;
+      position: relative;
+    }
+    #dashboard-section h2 {
+      gap: 15px;
+      justify-content: center;
+    }
+    #dashboard-section h2 i {
+      font-size: 1.8rem;
+      padding: 6px 12px;
+      border-radius: 14px;
+      color: white;
+      background-color: #0d6efd;
+      box-shadow: 0 0 10px #0d6efd;
+    }
+    #dashboard-section img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 14px;
+      border: 4px solid #ffc107;
+      cursor: default;
+      pointer-events: none;
+      user-select: none;
+      box-shadow: 0 4px 18px rgba(255, 193, 7, 0.85);
+      transition: transform 0.3s ease;
+    }
+    #dashboard-section img:hover {
+      transform: scale(1.1);
+    }
+    #dashboard-section a.dashboard-link {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 14px 32px;
+      font-weight: 700;
+      background-color: #ffc107;
+      color: #1a1a1a;
+      border-radius: 40px;
+      text-decoration: none;
+      font-size: 1.3rem;
+      transition: background-color 0.3s ease;
+    }
+    #dashboard-section a.dashboard-link:hover {
+      background-color: #e0a800;
+      color: #121212;
+      text-decoration: none;
+    }
+    #contact {
+      max-width: 900px;
+      margin: 40px auto 20px;
+      text-align: center;
+      font-size: 1.3rem;
+      padding-bottom: 30px;
+      position: relative;
+    }
+    #contact-icons {
+      position: absolute;
+      right: 5%;
+      top: -48px;
+      display: flex;
+      gap: 18px;
+      color: #ffc107;
+      font-size: 1.6rem;
+      user-select: none;
+      cursor: default;
+    }
+    #contact-icons i {
+      transition: color 0.3s ease;
+    }
+    #contact-icons i:hover {
+      color: #0d6efd;
+    }
+    #contact p {
+      margin-top: 8px;
+    }
+    footer {
+      text-align: center;
+      padding: 22px 10px;
+      font-size: 1rem;
+      background: #0d0d0d;
+      color: #777;
+      border-top: 1px solid #222;
+      margin-top: 70px;
+    }
+    @media (max-width: 700px) {
+      section {
+        margin: 30px 8px;
+        padding: 20px 15px;
+      }
+      .project-card {
+        flex: 1 1 100%;
+      }
+      nav {
+        gap: 18px;
+      }
+      #dashboard-section {
+        max-width: 100%;
+        margin: 50px 10px;
+      }
+      #dashboard-section img {
+        max-width: 100%;
+      }
+      #contact-icons {
+        position: static;
+        margin-top: 20px;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <img src="https://raw.githubusercontent.com/005pankajshinde99/My-Profile/main/WhatsApp%20Image%202025-09-13%20at%2014.14.25.jpeg" alt="Pankaj Shinde" class="profile-photo" />
+      <h1>Pankaj Shinde</h1>
+    </div>
+    <nav>
+      <a href="#about"><i class="fas fa-user"></i> About Me</a>
+      <a href="#projects"><i class="fas fa-folder-open"></i> Projects</a>
+      <a href="#dashboard-section"><i class="fas fa-table"></i> Dashboard</a>
+      <a href="#contact"><i class="fas fa-address-book"></i> Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2><i class="fas fa-user"></i> About Me</h2>
+    <p>Hello, I am <strong>Pankaj Shinde</strong>, a passionate Data Scientist and Data Analyst. I have completed comprehensive courses in Data Science and Data Analytics, and I am skilled in various data analytics tools. I have experience working with machine learning algorithms and building analytical dashboards to help businesses make data-driven decisions.</p>
+  </section>
+
+  <section id="projects">
+    <h2><i class="fas fa-folder-open"></i> Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3><i class="fas fa-chart-line project-icon"></i> Sales Trend Analysis</h3>
+        <p>Analyzed large datasets to uncover sales trends and customer behavior using Python and Excel.</p>
+        <a href="#" target="_blank" rel="noopener">View Code</a>
+      </div>
+      <div class="project-card">
+        <h3><i class="fas fa-users project-icon"></i> Customer Segmentation</h3>
+        <p>Applied clustering algorithms to segment customers and design targeted marketing strategies.</p>
+        <a href="#" target="_blank" rel="noopener">View Code</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="dashboard-section">
+    <h2><i class="fas fa-table"></i> My Excel Project Dashboard</h2>
+    <img src="https://raw.githubusercontent.com/005pankajshinde99/EXCEL-THUMBNAIL/main/Screenshot%202025-09-26%20213241.png" alt="Dashboard Thumbnail" title="Dashboard Thumbnail" />
+    <a href="https://raw.githubusercontent.com/005pankajshinde99/DASHBOARD-EXCEL/main/EEcom%20MY%20Dashboard%20-%20Copy.xlsx" class="dashboard-link" target="_blank" rel="noopener">Open Excel Dashboard</a>
+  </section>
+
+  <section id="contact">
+    <h2><i class="fas fa-address-book"></i> Contact</h2>
+    <div id="contact-icons" aria-label="Contact Icons">
+      <i class="fas fa-envelope" title="Email"></i>
+      <i class="fab fa-linkedin" title="LinkedIn"></i>
+    </div>
+    <p>Email: <a href="mailto:005pankajshinde@gmail.com">005pankajshinde@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/pankaj-shinde-1130a2291" target="_blank" rel="noopener">www.linkedin.com/in/pankaj-shinde-1130a2291</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Pankaj Shinde</p>
+  </footer>
+</body>
+</html>
+
+
+
+
+
+
